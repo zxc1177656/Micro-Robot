@@ -1,0 +1,91 @@
+#===============================================================================
+# @brief    Kconfig file.
+# Copyright (c) @CompanyNameMagicTag 2023-2023. All rights reserved.
+#===============================================================================
+config SAMPLE_SUPPORT_SPI_MASTER
+    bool
+    prompt "Support SPI Master Sample."
+    default y
+    depends on SAMPLE_ENABLE
+    help
+        This option means support SPI Master Sample.
+
+config SPI_MASTER_BUS_ID
+    int
+    prompt "Choose SPI master bus id."
+    depends on SAMPLE_SUPPORT_SPI_MASTER
+    default 0
+
+config SPI_DO_MASTER_PIN
+    int
+    prompt "Choose SPI DIN master pin."
+    depends on SAMPLE_SUPPORT_SPI_MASTER
+    default 9
+
+config SPI_CLK_MASTER_PIN
+    int
+    prompt "Choose SPI CLK master pin."
+    depends on SAMPLE_SUPPORT_SPI_MASTER
+    default 7
+
+config SPI_CS_MASTER_PIN
+    int
+    prompt "Choose SPI CS master pin."
+    depends on SAMPLE_SUPPORT_SPI_MASTER
+    default 8
+
+config OLED_RES_PIN
+    int
+    prompt "Choose LCD RST pin."
+    depends on SAMPLE_SUPPORT_SPI_MASTER
+    default 6
+
+config OLED_DC_PIN
+    int
+    prompt "Choose LCD DC pin."
+    depends on SAMPLE_SUPPORT_SPI_MASTER
+    default 10
+
+config SAMPLE_SUPPORT_GPIO
+    bool "Support GPIO sample"
+    default y
+
+config GPIO_1
+    int
+    prompt "Choose the first GPIO pin to set high."
+    depends on SAMPLE_SUPPORT_GPIO
+    default 1
+
+config GPIO_2
+    int
+    prompt "Choose the second GPIO pin to set low."
+    depends on SAMPLE_SUPPORT_GPIO
+    default 2
+
+config GPIO_13
+    int
+    prompt "Choose the third GPIO pin to set high."
+    depends on SAMPLE_SUPPORT_GPIO
+    default 13
+
+config GPIO_14
+    int
+    prompt "Choose the fourth GPIO pin to set low."
+    depends on SAMPLE_SUPPORT_GPIO
+    default 14
+
+config SAMPLE_SUPPORT_PWM
+    bool "Support PWM sample"
+    default y
+
+config PWM_PIN_5
+    int
+    prompt "Choose the first PWM pin."
+    depends on SAMPLE_SUPPORT_PWM
+    default 5
+
+config PWM_PIN_0
+    int
+    prompt "Choose the second PWM pin."
+    depends on SAMPLE_SUPPORT_PWM
+    default 0
